@@ -46,6 +46,7 @@ namespace Task_5
                 else
                 {
                     Console.WriteLine("Enter number of quarts :");
+                    //TODO: You need to handle if the user passes in a String. When I enter J it breaks the program
                     quarts = int.Parse(Console.ReadLine());
                     cups = quarts * 4;
                     Console.WriteLine("The coversion of quarts to cup is:" + cups);
