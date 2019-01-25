@@ -7,71 +7,111 @@ namespace Task_5
         static void Main(string[] args)
         {
 
-
-            
             double cups = 0.0;
             double quarts = 0.0;
-
-            int choice;
-            int option= 0 ;
-            //TODO: Local variables need to be lowercase.
-            string Question = "Y";
+            bool? status = null;
+            int choice = 0;
+            //int option= 0 ;
+            string question = "Y";
+            string tempnum = string.Empty;
+            bool isNumeric = true;
 
             do
             {
 
-                Console.WriteLine("What do you want to do? 1.cups to quarts , 2.quarts to cups :");
-            choice = int.Parse(Console.ReadLine());
+
+                do while (choice <= 2)
+                    {
+                        do
+                        {
 
 
-            }
-            while(option >=2);
+                            Console.WriteLine("What do you want to do? 1.cups to quarts , 2.quarts to cups :");
 
-            {
-                //TODO: Why are you halting the program? This needs to execute some type of logic. 
-                // Example store it to a variable and display it. 
-                Console.ReadLine();
-            }
 
-            
+                            tempnum = Console.ReadLine();
+                            isNumeric = double.TryParse(tempnum, out double n);
+                            if (isNumeric == false || double.Parse(tempnum) <= 0 || double.Parse(tempnum) > 2)
+                            {
+                                Console.WriteLine("Please enter a number between 1 and 2");
+                                isNumeric = false;
+                            }
 
-            ////process
-            do
-            {
-                if (choice == 1)
+                        } while (isNumeric == false || double.Parse(tempnum) <= 0 || double.Parse(tempnum) > 2);
+                        choice = int.Parse(tempnum);
 
-                {
-                    Console.WriteLine("Enter number of cups :");
-                    //TODO: Cups is a double not an int
-                    cups = int.Parse(Console.ReadLine());
 
-                    quarts = cups * 4;
-                    Console.WriteLine("The conversion of cups to quarts is:" + quarts);
-                }
-                //TODO: This is incorrect. The user only has 2 options not three. 
-                else
-                {
-                    Console.WriteLine("Enter number of quarts :");
-                    //TODO: YOu still need to handle if a user enters a String
-                    //TODO: You need to handle if the user passes in a String. When I enter J it breaks the program
-                    quarts = int.Parse(Console.ReadLine());
-                    cups = quarts * 4;
-                    Console.WriteLine("The coversion of quarts to cup is:" + cups);
-                }
+                        // do (if 1 or 2) while (input != double)
 
+                        do
+                        {
+                            if (status == false)
+
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Please enter numeric value");
+                                Console.ReadLine();
+                            }
+                            if (choice == 1)
+                            {
+                                Console.WriteLine("Enter number of cups :");
+                                status = double.TryParse(Console.ReadLine(), out cups);
+
+                                quarts = cups * 4;
+                                Console.WriteLine("The conversion of cups to quarts is:" + quarts);
+
+
+                            }
+                            else
+                            {
+                                Console.WriteLine("Enter number of quarts :");
+                                status = double.TryParse(Console.ReadLine(), out quarts);
+                                cups = quarts * 4;
+                                Console.WriteLine("The coversion of quarts to cup is:" + cups);
+                            }
+                    
                 Console.WriteLine("Do you want to Continue? Y or N");
-                Question = Console.ReadLine();
-                //TODO: Loops when I press N it doesnt exit the program. 
-            } while (Question != "N");
-            Console.ReadLine();
-        }
-    }
+                            question = Console.ReadLine();
+                        } while (question == "Y");
 
+
+                    } while (choice != 2);
+                    } while (status == false);
+
+                       Console.ReadLine();
+
+
+
+
+
+
+
+
+
+        }
+
+    }
 }
 
 
-            
 
 
-        
-   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
