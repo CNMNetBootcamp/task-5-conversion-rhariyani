@@ -12,7 +12,8 @@ namespace Task_5
             bool? status = null;
             int choice = 0;
             //int option= 0 ;
-            string question = "Y";
+            string question =  String.Empty;
+
             string tempnum = string.Empty;
             bool isNumeric = true;
 
@@ -20,8 +21,7 @@ namespace Task_5
             {
 
 
-                do while (choice <= 2)
-                    {
+                
                         do
                         {
 
@@ -40,8 +40,8 @@ namespace Task_5
                         } while (isNumeric == false || double.Parse(tempnum) <= 0 || double.Parse(tempnum) > 2);
                         choice = int.Parse(tempnum);
 
-
-                        // do (if 1 or 2) while (input != double)
+                do
+                    {                        
 
                         do
                         {
@@ -70,15 +70,17 @@ namespace Task_5
                                 Console.WriteLine("The coversion of quarts to cup is:" + cups);
                             }
                     
-                Console.WriteLine("Do you want to Continue? Y or N");
+                            Console.WriteLine("Do you want to Continue? Y or N");
                             question = Console.ReadLine();
-                        } while (question == "Y");
+
+            } while (question != "N");
+                } while (choice >2);
+            } while (status == false);
+            Console.ReadLine();
 
 
-                    } while (choice != 2);
-                    } while (status == false);
 
-                       Console.ReadLine();
+
 
 
 
