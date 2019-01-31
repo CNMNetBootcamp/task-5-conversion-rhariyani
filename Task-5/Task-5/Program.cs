@@ -12,16 +12,13 @@ namespace Task_5
             bool? status = null;
             int choice = 0;
             //int option= 0 ;
-            string question =  String.Empty;
+            string question = "Y";
 
             string tempnum = string.Empty;
             bool isNumeric = true;
 
             do
             {
-
-
-                
                         do
                         {
 
@@ -76,15 +73,15 @@ namespace Task_5
                 } while (choice > 2);
                     Console.WriteLine("Do you want to Continue? Y or N");
                 question = Console.ReadLine();
-            } while (question != "N");
-                
-      
+            } while (question.ToUpper() == "Y".ToUpper());
 
-                    
-               
-            
 
-           
+
+
+
+
+
+
 
 
 
@@ -99,6 +96,10 @@ namespace Task_5
 
         }
 
+        private static string ToUpper()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
