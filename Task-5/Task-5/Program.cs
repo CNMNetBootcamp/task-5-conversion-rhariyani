@@ -72,6 +72,7 @@ namespace Task_5
                     //Press enter once equation is over
                 } while (choice > 2);
                     Console.WriteLine("Do you want to Continue? Y or N");
+                //TODO: Read the user input in. Then find a way to Lower case or Uppercase the input. 
                 question = Console.ReadLine();
             } while (question.ToUpper() == "Y".ToUpper());
 
