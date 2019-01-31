@@ -6,7 +6,7 @@ namespace Task_5
     {
         static void Main(string[] args)
         {
-
+            //Good
             double cups = 0.0;
             double quarts = 0.0;
             bool? status = null;
